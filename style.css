@@ -1,0 +1,147 @@
+/* ====== Facebook-like Login (basic HTML + CSS) ====== */
+:root{
+  --fb-blue: #1a5fba;
+  --fb-green: #42b72a;
+  --text: #1c1e21;
+  --muted: #65676b;
+  --bg: #d9dce1;
+  --white: #ffffff;
+  --border: #dddfe2;
+  --shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+*{ box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body{
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  color: var(--text);
+  background: var(--bg);
+}
+
+.page{
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 32px 16px;
+}
+
+.brand{
+  font-size: clamp(42px, 6vw, 56px);
+  margin: 0 0 12px;
+  color: var(--fb-blue);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.card{
+  width: 100%;
+  max-width: 396px;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 20px 16px 24px;
+  border: 1px solid #e6e6e6;
+}
+
+.card-title{
+  margin: 4px 0 16px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.form{ display: grid; gap: 12px; }
+
+.form-group input{
+  width: 100%;
+  height: 52px;
+  padding: 0 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 16px;
+  outline: none;
+  background: #fff;
+}
+
+.form-group input::placeholder{ color: #8a8d91; }
+
+.form-group input:focus{
+  border-color: var(--fb-blue);
+  box-shadow: 0 0 0 3px rgba(24,119,242,.15);
+}
+
+.btn{
+  height: 48px;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn:active{ transform: translateY(0.5px); }
+
+.btn-primary{ background: var(--fb-blue); color: #fff; }
+.btn-primary:hover{ filter: brightness(0.98); }
+
+.btn-success{ background: var(--fb-green); color: #fff; }
+.btn-success:hover{ filter: brightness(0.98); }
+
+.forgot{
+  text-align: center;
+  margin: 2px 0 0;
+  font-size: 14px;
+}
+
+.forgot a{ color: var(--fb-blue); text-decoration: none; }
+.forgot a:hover{ text-decoration: underline; }
+
+.divider{
+  display: grid;
+  place-items: center;
+  margin: 8px 0;
+  position: relative;
+  height: 24px;
+}
+
+.divider::before{
+  content: "";
+  position: absolute;
+  inset: 50% 0 auto 0;
+  border-top: 1px solid #dadde1;
+  transform: translateY(-50%);
+}
+
+.divider span{
+  background: #fff;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #505257;
+  z-index: 1;
+  border-radius: 12px;
+}
+
+/* Utility: screen-reader-only */
+.sr-only{
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+/* Small tweaks for very narrow screens */
+@media (max-width: 360px){
+  .card{ padding: 16px 12px 20px; }
+  .form-group input{ height: 48px; }
+}
+
+.title{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
